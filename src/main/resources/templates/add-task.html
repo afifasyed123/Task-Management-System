@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Task Manager System</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-primary text-white">
+            <h3>Add Task</h3>
+        </div>
+
+        <div class="card-body">
+
+            <form th:action="@{/tasks/save}" method="post">
+
+                <div class="mb-3">
+                    <label class="form-label">Title</label>
+                    <input class="form-control"
+                           type="text"
+                           name="title">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Description</label>
+                    <textarea class="form-control"
+                              name="description"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Due Date</label>
+                    <input class="form-control"
+                           type="date"
+                           name="dueDate">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Priority</label>
+
+                    <select class="form-select" name="priority">
+                        <option>LOW</option>
+                        <option>MEDIUM</option>
+                        <option>HIGH</option>
+                    </select>
+
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Status</label>
+
+                    <select class="form-select" name="status">
+                        <option>TODO</option>
+                        <option>IN_PROGRESS</option>
+                        <option>DONE</option>
+                    </select>
+
+                </div>
+
+                <button class="btn btn-success">
+                    Save Task
+                </button>
+
+                <a href="/tasks"
+                   class="btn btn-secondary">
+                    View Tasks
+                </a>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
